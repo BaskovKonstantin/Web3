@@ -1,0 +1,39 @@
+.basis {
+    background: black;
+    color: #ffcc00;
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 650px;
+    height: 650px;
+    opacity: 0.8;
+    border: 4px solid #ffcc00;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.basis h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffcc00;
+    font-family: monospace;
+    font-weight: 100;
+    text-shadow:0 0 20px #ffffff;
+}
+
+.ui-analog-clock {
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.ui-clock {
+    height: 300px;
+    width: 400px;
+    margin-bottom: 40px;
+    background: #ffcc00 ;
+
+}
+

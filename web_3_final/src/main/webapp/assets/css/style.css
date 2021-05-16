@@ -1,0 +1,160 @@
+body {
+    background-size: 100%;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.header, .footer {
+    padding: 1em 0;
+}
+
+.header {
+    color: #ffcc00;
+    font-family: serif;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.basis {
+    background: #ffffff;
+    color: black;
+    opacity: 0.8;
+    border: 3px solid #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cetnerBorder {
+
+    background: #ffcc00;
+    color: black;
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 650px;
+    height: 300px;
+    opacity: 0.8;
+    overflow: scroll;
+    margin: auto;
+    border: 3px solid #000000;
+}
+
+/*.text-center {
+    margin-bottom: 1%;
+    font-family: monospace;
+    text-align: center;
+    font-size: 200%;
+    color: #49147a;
+    flex-grow: 0;
+}*/
+.basis h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #000000;
+    font-family: monospace;
+    font-weight: 100;
+    text-shadow: 3px 3px 0 #ffffff,
+    5px 5px 0 #ffcc00
+}
+
+.chooseElement {
+    float: left;
+    margin-right: 50px;
+}
+
+.ui-analog-clock {
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.ui-clock {
+    margin-left: 268px;
+    height: 300px;
+    width: 400px;
+    background: #ffcc00;
+}
+
+.butt {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 50px;
+    background: #ffcc00;
+    color: black;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.butt:hover {
+    background: #000000;
+}
+
+.button {
+    width: 45px;
+    padding: 5px;
+    margin-bottom: 5px;
+
+}
+
+.buttons {
+    width: 190px;
+}
+
+.reset {
+    width: 45px;
+    padding: 5px;
+    margin-bottom: 5px;
+
+}
+
+.button:hover {
+    background-position: 0 0;
+    color: #fff;
+}
+
+.button:focus {
+    background-position: 0 0;
+    color: #fff;
+}
+
+table {
+    color: black;
+    width: 100%;
+    border-spacing: 1px;
+    text-align: center;
+    overflow: scroll;
+}
+
+td, th, tr {
+    width: 20%;
+    text-align: center;
+}
+
+
+::selection {
+    background: #ffcc00;
+}
+
+#image {
+    border: 3px solid #ffcc00;
+    margin-left: 30px;
+    width: 250px;
+    height: 250px;
+}
+
+#VT_logo {
+    background: #ffcc00
+}
+
+input[type=text] {
+    font-size: 15px;
+    text-align: center;
+}
+
+.frame {
+    opacity: 0;
+}
+
+

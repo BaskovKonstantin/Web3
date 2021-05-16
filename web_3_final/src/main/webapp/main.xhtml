@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:jsp="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+    <title>Lab3</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+
+</h:head>
+<h:body style="text-align: center">
+
+    <div class="basis">
+        <h:form id="getForm">
+
+            <p:panel header="Введите значения:">
+
+                <p:column>
+                    <h:outputLabel for="x">Значение X от -4 до 4</h:outputLabel>
+                    <h:inputHidden id="x" value="#{informationList.information.coordinateX}" display="x_out"/>
+                    <p:slider for="x"  minValue="-4" maxValue="4" step="0.1" style = "visibility: hidden"/>
+                    <p:selectBooleanCheckbox id="BooleanCheckbox1" value="X1"  for="x" onchange="ClickX(-3)"/>-3
+                    <p:selectBooleanCheckbox id="BooleanCheckbox2" value="X2"  for="x" onchange="ClickX(-2)"/>-2
+                    <p:selectBooleanCheckbox id="BooleanCheckbox3" value="X3"  for="x" onchange="ClickX(-1)"/>-1
+                    <p:selectBooleanCheckbox id="BooleanCheckbox4" value="X4"  for="x" onchange="ClickX(0)"/>0
+                    <br/>
+                    <p:selectBooleanCheckbox id="BooleanCheckbox5" value="X5"  for="x" onchange="ClickX(1)"/>1
+                    <p:selectBooleanCheckbox id="BooleanCheckbox6" value="X6"  for="x" onchange="ClickX(2)"/>2
+                    <p:selectBooleanCheckbox id="BooleanCheckbox7" value="X6"  for="x" onchange="ClickX(3)"/>3
+                    <p:selectBooleanCheckbox id="BooleanCheckbox8" value="X6"  for="x" onchange="ClickX(4)"/>4
+                    <h:outputText id="x_out"/>
+                </p:column>
+                <br/>
+
+                <p:column>
+                    <h:outputLabel for="y">Значение Y от -5 до 5</h:outputLabel>
+                    <p:inputNumber minValue="-5"
+                                   maxValue="5" decimalPlaces="3"
+                                   id="y"
+                                   value="#{informationList.information.coordinateY}"/>
+                </p:column>
+                <br/>
+
+                <p:column>
+                    <h:outputLabel for="r">Значение R от 1 до 5</h:outputLabel>
+                    <p:spinner id="r" value="#{informationList.information.valueR}" stepFactor="0.5" min="1" max="3" style = "visibility: hidden"/>
+                    <br/>
+                    <p:commandButton id="r_button1" value="R1" type="button" for="r" onclick="handleClick(1)"/>
+                    <p:commandButton id="r_button2" value="R2" type="button" for="r" onclick="handleClick(2)"/>
+                    <p:commandButton id="r_button3" value="R3" type="button" for="r" onclick="handleClick(3)"/>
+                    <p:commandButton id="r_button4" value="R4" type="button" for="r" onclick="handleClick(4)"/>
+                    <p:commandButton id="r_button5" value="R5" type="button" for="r" onclick="handleClick(5)"/>
+                </p:column>
+                <br/>
+
+                <p:commandButton id="out_button"
+                                 value="ВВОД" ajax="false"
+                                 action="#{informationList.add}"/>
+            </p:panel>
+        </h:form>
+
+        <div class="svg">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" id="graph" class="svg-graph">
+
+
+                <polygon class="frame" points="0,0 0,300 300,300 300,0"/>
+
+                <g id = "figure" transform="translate(150 150) scale(-25,25)">
+                    <path d="M0 0 L 0 2 A2 -2 0 0 1  -2  0 " fill="#007dff" stroke="black" stroke-width="0.03"></path>
+                    <polygon class="przamoyg" stroke="black" stroke-width="0.03" points="0,0 2,0
+                                                                                        2,4,0,4"
+                             fill="#007dff" ></polygon>
+                    <polygon class="treyg" stroke="black" stroke-width="0.03" points="0,0 -4,0
+                                                                                        0,-2"
+                             fill="#007dff" ></polygon>
+
+                </g>
+
+
+                <line class="line" x1="0" x2="400" y1="150" y2="150" stroke="black"></line>
+                <line class="line" x1="150" x2="150" y1="0" y2="400" stroke="black"></line>
+
+                <g id = "figure" transform="translate(150 150) ">
+
+                    <text id = "text1" class="text" x="5" y="50">R/2</text>
+                    <text id = "text2" class="text" x="5" y="100">R</text>
+
+                    <text id = "text3" class="text" x="5" y="-100">-R</text>
+                    <text id = "text4" class="text" x="5" y="-50">-R/2</text>
+
+
+                    <text id = "text5" class="text" x="50" y="-5">R/2</text>
+                    <text id = "text6" class="text" x="100" y="-5">R</text>
+
+                    <text id = "text7" class="text" x="-50" y="-5">-R/2</text>
+                    <text id = "text8" class="text" x="-100" y="-5">-R</text>
+
+                </g>
+
+
+                <text class="text" x="290" y="170">X</text>
+                <text class="text" x="160" y="13">Y</text>
+
+                <g>
+                    <circle class="point" cx="0" cy="0" r="0" fill="orange" stroke="navy" stroke-width="10"
+                            id="point"></circle>
+                </g>
+
+            </svg>
+        </div>
+
+
+        <h:form>
+            <p:button outcome="to_index" value="Вернуться назадд" icon="pi"/>
+        </h:form>
+
+    </div>
+    <h:outputScript>
+        function handleClick(r) {
+            document.getElementsByTagName('input')[2].value = r;
+            document.getElementById('getForm:r_input').value = r;
+            document.getElementById('getForm:r').value = r;
+            document.getElementById('r').value = r;
+            document.getElementsByTagName('input')[2].setAttribute("aria-valuenow",r);
+            document.getElementById('getForm:r_input').setAttribute("aria-valuenow",r);
+            document.getElementById('getForm:r').setAttribute("aria-valuenow",r);
+            document.getElementById('r').setAttribute("aria-valuenow",r);
+
+        }
+        function ClickX(x) {
+            document.getElementsByTagName('input')[1].value = x;
+            document.getElementById('getForm:x_input').value = x;
+            document.getElementById('getForm:x').value =x;
+            document.getElementById('x').value = x;
+        }
+    </h:outputScript>
+</h:body>
+
+
+<div class="cetnerBorder">
+    <h:form id="tableForm">
+        <h:dataTable id="tableData"  value="#{informationList.informationList}" var="information">
+            <h:column headerClass="result-table__column result-table__column_coords">
+                <f:facet name="header">X</f:facet>
+                <h:outputText value="#{information.coordinateX}"/>
+            </h:column>
+            <h:column headerClass="result-table__column result-table__column_coords">
+                <f:facet name="header">Y</f:facet>
+                <h:outputText value="#{information.coordinateY}"/>
+            </h:column>
+            <h:column headerClass="result-table__column result-table__column_coords">
+                <f:facet name="header">R</f:facet>
+                <h:outputText value="#{information.valueR}"/>
+            </h:column>
+            <h:column headerClass="result-table__column result-table__column_hitres">
+                <f:facet name="header">Result</f:facet>
+                <h:outputText value="#{information.result}"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+    <script type="text/javascript" src="assets/check.js"></script>
+
+</div>
+</html>

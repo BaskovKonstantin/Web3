@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+    <title>Lab3</title>
+    <link rel="shortcut icon" type="image/x-icon" href="#{resource['assetd/images/dead.jpg']}"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style_index.css"/>
+
+</h:head>
+
+<h:body style="text-align: center">
+    <div id = "Title" class="basis" >
+        <h1 class="text-center">
+            Басков К.Д. &amp;&amp; Головков М.С. from P3232
+            <br/> Лабораторная работа  №3
+            <br/>Вариант 21592
+        </h1>
+
+
+        <p:clock displayMode="analog" mode="server" autoSync="true"  />
+        <p:clock displayMode="digital" pattern="HH:mm:ss" mode="server" autoSync="true" />
+        <p:clock displayMode="digital" pattern="dd.MM.yyyy" mode="server" autoSync="true" />
+
+        <br/>
+        <h:link outcome="to_main">
+            <p:button outcome="to_main" value="Ну может не надо..." icon="pi" style="text-align: center"/>
+        </h:link>
+    </div>
+
+</h:body>
+</html>
+
